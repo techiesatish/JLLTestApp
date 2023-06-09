@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/mainFragment">
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.jll.jlltestapp.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.jll.jlltestapp.ui.details.DetailsFragment"
+        android:label="InvestContainerFragment"
+        tools:layout="@layout/fragment_main">
+        <argument
+            android:name="product"
+            app:argType="com.jll.jlltestapp.data.remote.model.Product"
+            app:nullable="false" />
+    </fragment>
+</navigation>
